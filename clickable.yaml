@@ -1,0 +1,9 @@
+clickable_minimum_required: 8.0.0
+builder: cmake
+kill: appname
+
+dependencies_target:
+- libqt5svg5-dev
+- qtquickcontrols2-5-dev
+- libexiv2-dev
+- libqzxing-dev
