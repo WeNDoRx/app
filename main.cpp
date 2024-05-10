@@ -19,7 +19,9 @@
 #include <QUrl>
 #include <QString>
 #include <QQuickView>
-#include "QZXing.h"
+#include <qzxing/QZXing.h>
+#include <QQmlApplicationEngine>
+
 
 int main(int argc, char *argv[])
 {
@@ -28,7 +30,10 @@ int main(int argc, char *argv[])
 
     qDebug() << "Starting app from main.cpp";
     
+    QQmlApplicationEngine engine;
+
     QZXing::registerQMLTypes();
+    QZXing::registerQMLImageProvider(engine);
 
     QQuickView *view = new QQuickView();
     view->setSource(QUrl("qrc:/Main.qml"));
